@@ -1,7 +1,7 @@
 const stories = [
   {
     initial: 'K',
-    quote: 'I arrived broken by addiction, unable to look at myself in the mirror. Three months with Ego Dragon taught me to fight — not others, but the demons within. Today I run my own business and mentor others.',
+    quote: 'I arrived broken by addiction, unable to look at myself in the mirror. Three months with Igo Dragon taught me to fight — not others, but the demons within. Today I run my own business and mentor others.',
     name: 'K., 34',
     context: 'Drug addiction recovery · Phoenix Rising',
     featured: false,
@@ -15,7 +15,7 @@ const stories = [
   },
   {
     initial: 'M',
-    quote: 'My family had given up on me. Ego Dragon didn\'t. The Kung Fu sessions gave me structure. The meditation gave me peace. The family here gave me love. I am alive today because of this place.',
+    quote: 'My family had given up on me. Igo Dragon didn\'t. The Kung Fu sessions gave me structure. The meditation gave me peace. The family here gave me love. I am alive today because of this place.',
     name: 'M., 22',
     context: 'Suicide attempt survivor · Phoenix Rising',
     featured: false,

@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="nav-container">
         <Link to="/" className="logo">
           <span className="logo-symbol">☯</span>
-          <span className="logo-text">EGO<strong>DRAGON</strong></span>
+          <span className="logo-text">IGO<strong>DRAGON</strong></span>
         </Link>
 
         <button

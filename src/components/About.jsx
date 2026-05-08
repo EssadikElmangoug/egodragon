@@ -30,13 +30,13 @@ export default function About() {
 
           <div className="about-content">
             <div className="section-label">Who We Are</div>
-            <h2 className="section-title">We Are Ego Dragon</h2>
+            <h2 className="section-title">We Are Igo Dragon</h2>
             <p className="section-lead">
               A family-rooted association nestled in the soul of Morocco, where ancient
               wisdom meets transformative healing.
             </p>
             <p style={{ color: 'var(--text-muted)', marginBottom: 16 }}>
-              Founded in the sun-drenched valleys of Ouarzazate, Ego Dragon exists for one
+              Founded in the sun-drenched valleys of Ouarzazate, Igo Dragon exists for one
               purpose: to guide you toward the greatest victory you will ever achieve — victory
               over yourself.
             </p>

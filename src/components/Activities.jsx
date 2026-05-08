@@ -5,7 +5,7 @@ const activities = [
     tag: 'Body Mastery',
     items: [
       'Kung Fu — Self-Mastery Through Combat',
-      'Jiu-Jitsu — Ground Defense & Discipline',
+
       'Wing Chun — Precision & Flow',
       'Aerobics — Energize & Strengthen',
     ],

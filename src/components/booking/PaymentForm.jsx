@@ -24,7 +24,7 @@ export default function PaymentForm({ data, onChange, summary }) {
         <div className="review-row"><span>Guests</span><strong>{summary.guests}</strong></div>
         <div className="review-row total">
           <span>Total</span>
-          <strong className="review-total-amount">€{summary.total.toLocaleString()}</strong>
+          <strong className="review-total-amount">${summary.total.toLocaleString()}</strong>
         </div>
       </div>
 

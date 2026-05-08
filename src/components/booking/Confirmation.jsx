@@ -45,7 +45,7 @@ export default function Confirmation({ bookingRef, summary }) {
         <div className="conf-detail-row">
           <span className="conf-detail-label">Total Paid</span>
           <span className="conf-detail-value" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)', fontSize: '1.2rem' }}>
-            €{summary.total.toLocaleString()}
+            ${summary.total.toLocaleString()}
           </span>
         </div>
       </div>

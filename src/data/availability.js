@@ -1,11 +1,7 @@
-// Periods when association is fully booked (YYYY-MM-DD)
+// Only genuine closure periods — everything else is open and bookable
 export const blockedRanges = [
-  { start: '2026-05-18', end: '2026-05-31', label: 'Fully booked' },
-  { start: '2026-06-10', end: '2026-06-24', label: 'Fully booked' },
-  { start: '2026-07-20', end: '2026-08-20', label: 'Summer intensive' },
-  { start: '2026-09-05', end: '2026-09-18', label: 'Fully booked' },
-  { start: '2026-10-01', end: '2026-10-14', label: 'Fully booked' },
-  { start: '2026-12-20', end: '2027-01-06', label: 'Holiday closure' },
+  { start: '2026-08-10', end: '2026-08-24', label: 'Summer intensive — closed to new bookings' },
+  { start: '2026-12-25', end: '2027-01-03', label: 'Holiday closure' },
 ]
 
 const toMidnight = (date) => {

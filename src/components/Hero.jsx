@@ -47,7 +47,7 @@ export default function Hero() {
       <div className="hero-mountain" />
 
       <div className="hero-content">
-        <div className="hero-badge">Ego Dragon Association · Ouarzazate, Morocco</div>
+        <div className="hero-badge">Igo Dragon Association · Ouarzazate, Morocco</div>
         <h1 className="hero-title">
           The Greatest Victory
           <br />

@@ -5,13 +5,6 @@ const features = [
   { icon: 'fa-star', title: 'Exceptional Stargazing', desc: 'Some of the darkest skies and most spectacular stars in Africa' },
 ]
 
-const months = [
-  { name: 'Jan', cls: 'good' }, { name: 'Feb', cls: 'good' }, { name: 'Mar', cls: 'ideal' },
-  { name: 'Apr', cls: 'ideal' }, { name: 'May', cls: 'good' }, { name: 'Jun', cls: 'hot' },
-  { name: 'Jul', cls: 'hot' }, { name: 'Aug', cls: 'hot' }, { name: 'Sep', cls: 'good' },
-  { name: 'Oct', cls: 'ideal' }, { name: 'Nov', cls: 'ideal' }, { name: 'Dec', cls: 'good' },
-]
-
 export default function Location() {
   return (
     <section className="section location" id="location">
@@ -47,20 +40,6 @@ export default function Location() {
                 <div className="map-pin-icon">📍</div>
                 <div className="map-pin-label">Ouarzazate</div>
                 <div className="map-pin-coords">30°55′N · 6°54′W · 1160m alt.</div>
-              </div>
-            </div>
-
-            <div className="climate-card">
-              <h4>Best Time to Visit</h4>
-              <div className="climate-months">
-                {months.map(m => (
-                  <div key={m.name} className={`climate-month ${m.cls}`}>{m.name}</div>
-                ))}
-              </div>
-              <div className="climate-legend">
-                <span className="ideal">Ideal</span>
-                <span className="good">Good</span>
-                <span className="hot">Hot</span>
               </div>
             </div>
           </div>

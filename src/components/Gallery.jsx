@@ -14,7 +14,7 @@ export default function Gallery() {
       <div className="container">
         <div className="section-header">
           <div className="section-label">The Experience</div>
-          <h2 className="section-title">Life Inside Ego Dragon</h2>
+          <h2 className="section-title">Life Inside Igo Dragon</h2>
         </div>
 
         <div className="gallery-grid">

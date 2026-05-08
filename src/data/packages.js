@@ -1,73 +1,33 @@
-export const packages = [
-  {
-    id: 'spark',
-    name: 'Inner Spark',
-    emoji: '🌱',
-    duration: '1 Week',
-    nights: 7,
-    price: 350,
-    pricePerNight: 50,
-    tagline: 'Begin your journey of self-discovery',
-    color: '#2A5C45',
-    included: [
-      'Accommodation in association house',
-      '3 traditional Moroccan bio meals/day',
-      '2 group activities daily',
-      'Daily guided meditation',
-      'Nature walks & oasis access',
-      'Complete digital detox',
-    ],
-    notIncluded: [
-      'Personal coaching sessions',
-      'Intensive rehab support',
-    ],
-  },
-  {
-    id: 'dragon',
-    name: "Dragon's Path",
-    emoji: '🐉',
-    duration: '2 Weeks',
-    nights: 14,
-    price: 600,
-    pricePerNight: 43,
-    tagline: 'Walk the warrior path to transformation',
-    featured: true,
-    color: '#C4603A',
-    included: [
-      'Everything in Inner Spark',
-      'Full martial arts training (Kung Fu, Jiu-Jitsu, Wing Chun)',
-      'Wild camping experience',
-      'Trekking & mountain hiking',
-      'Personalized wellness program',
-      '3 personal coaching sessions',
-      'Medical dressage therapy',
-    ],
-    notIncluded: [
-      'Intensive rehab support',
-    ],
-  },
-  {
-    id: 'phoenix',
-    name: 'Phoenix Rising',
-    emoji: '🔥',
-    duration: '1 Month',
-    nights: 28,
-    price: 1100,
-    pricePerNight: 39,
-    tagline: 'Complete transformation from within',
-    color: '#D4A843',
-    included: [
-      "Everything in Dragon's Path",
-      'Daily personal coaching',
-      'Intensive addiction rehabilitation',
-      'Complete transformation program',
-      'Medical follow-up & care',
-      'Post-retreat recovery plan',
-      'Family counseling option',
-      'Certificate of completion',
-    ],
-    notIncluded: [],
-  },
-]
+export const RATE_PER_WEEK = 500 // USD per person per week
+export const MIN_NIGHTS = 7
 
-export const getPackageById = (id) => packages.find(p => p.id === id) || packages[1]
+export const experience = {
+  name: 'Igo Dragon Full Experience',
+  emoji: '☯',
+  tagline: 'All services included. One experience.',
+  ratePerWeek: RATE_PER_WEEK,
+  included: [
+    'Accommodation in authentic Moroccan family home',
+    '3 traditional Moroccan bio meals per day',
+    'Kung Fu & Wing Chun martial arts',
+    'Aerobics & daily fitness sessions',
+    'Guided meditation under desert stars',
+    'Yoga at sunrise & sunset',
+    'Tai Chi & Qigong practice',
+    'Trekking, hiking & oasis exploration',
+    'Wild camping under the stars',
+    'Swimming in natural springs & rivers',
+    'Medical dressage therapy',
+    'Body cleanse & traditional bio food recipes',
+    'Personal coaching sessions',
+    'Addiction & rehabilitation support',
+    'Moroccan culture & family life immersion',
+    'Complete digital detox environment',
+  ],
+}
+
+// Price = $500/week prorated by actual nights
+export const calcTotal = (nights, guests = 1) => {
+  if (nights <= 0) return 0
+  return Math.round((nights / 7) * RATE_PER_WEEK * Math.max(guests, 1))
+}

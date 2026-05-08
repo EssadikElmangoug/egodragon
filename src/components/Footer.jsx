@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="logo">
               <span className="logo-symbol">☯</span>
-              <span className="logo-text">EGO<strong>DRAGON</strong></span>
+              <span className="logo-text">IGO<strong>DRAGON</strong></span>
             </Link>
             <p>A sanctuary of transformation in the heart of Ouarzazate, Morocco.</p>
             <p className="footer-philosophy">"The greatest victory is over oneself"</p>
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2026 Ego Dragon Association · Ouarzazate, Morocco · All rights reserved</p>
+          <p>© 2026 Igo Dragon Association · Ouarzazate, Morocco · All rights reserved</p>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

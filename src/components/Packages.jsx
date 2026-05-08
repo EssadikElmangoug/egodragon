@@ -1,62 +1,68 @@
 import { Link } from 'react-router-dom'
-import { packages } from '../data/packages'
+import { experience, RATE_PER_WEEK } from '../data/packages'
+
+const examples = [
+  { label: '1 Week', nights: 7,  price: RATE_PER_WEEK },
+  { label: '2 Weeks', nights: 14, price: RATE_PER_WEEK * 2, featured: true },
+  { label: '1 Month', nights: 28, price: RATE_PER_WEEK * 4 },
+]
 
 export default function Packages() {
   return (
     <section className="section packages" id="packages">
       <div className="container">
         <div className="section-header">
-          <div className="section-label">Your Journey</div>
-          <h2 className="section-title">Choose Your Path</h2>
+          <div className="section-label">One Package</div>
+          <h2 className="section-title">Everything Included</h2>
           <p className="section-desc">
-            Each package is a door to transformation. Minimum stay 1 week.
-            All packages include full board and accommodation.
+            One all-inclusive experience. Every service, every activity, every meal —
+            nothing extra. The price changes only based on your stay duration.
           </p>
         </div>
 
-        <div className="packages-grid">
-          {packages.map(pkg => (
-            <div className={`package-card${pkg.featured ? ' featured' : ''}`} key={pkg.id}>
-              {pkg.featured && <div className="package-badge">Most Popular</div>}
-
-              <div className="package-header">
-                <span className="package-emoji">{pkg.emoji}</span>
-                <h3 className="package-name">{pkg.name}</h3>
-                <div className="package-duration">{pkg.duration} · {pkg.nights} Nights</div>
-                <div className="package-price">
-                  <span className="price-amount">€{pkg.price.toLocaleString()}</span>
-                  <span className="price-per">per person</span>
-                </div>
-              </div>
-
-              <ul className="package-features">
-                {pkg.included.map(f => (
-                  <li key={f} className="included">
-                    <i className="fas fa-check check" />
-                    {f}
-                  </li>
-                ))}
-                {pkg.notIncluded.map(f => (
-                  <li key={f}>
-                    <i className="fas fa-times cross" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="package-footer">
-                <Link to={`/booking?pack=${pkg.id}`} className={pkg.featured ? 'btn btn-primary' : 'btn btn-outline'}>
-                  Book {pkg.name}
-                </Link>
-              </div>
+        <div className="single-package">
+          <div className="sp-header">
+            <div className="sp-emblem">☯</div>
+            <h3>{experience.name}</h3>
+            <p className="sp-tagline">{experience.tagline}</p>
+            <div className="sp-price-row">
+              <span className="sp-rate">${RATE_PER_WEEK}</span>
+              <span className="sp-unit">per person · per week</span>
             </div>
-          ))}
-        </div>
+            <div className="sp-min-stay">Minimum stay: 1 week · 7 nights</div>
+          </div>
 
-        <p className="packages-note">
-          <i className="fas fa-info-circle" style={{ marginRight: 6, color: 'var(--gold)' }} />
-          All prices per person. Custom durations and group rates available — contact us directly.
-        </p>
+          <div className="sp-included">
+            <h4>What's Included</h4>
+            <div className="sp-grid">
+              {experience.included.map(item => (
+                <div className="sp-item" key={item}>
+                  <i className="fas fa-check" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="sp-examples">
+            {examples.map(ex => (
+              <div key={ex.label} className={`sp-example${ex.featured ? ' featured' : ''}`}>
+                {ex.featured && <div className="sp-example-badge">Most Popular</div>}
+                <span className="ex-duration">{ex.label}</span>
+                <span className="ex-nights">{ex.nights} nights</span>
+                <span className="ex-price">${ex.price.toLocaleString()}</span>
+                <span className="ex-unit">/person</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="sp-footer">
+            <Link to="/booking" className="btn btn-primary btn-large">
+              Check Availability & Book
+            </Link>
+            <p>Free cancellation up to 14 days before arrival · Price prorated on actual nights stayed</p>
+          </div>
+        </div>
       </div>
     </section>
   )
