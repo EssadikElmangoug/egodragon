@@ -15,13 +15,14 @@ ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/
 echo "==> Testing nginx config..."
 nginx -t
 
-echo "==> Reloading nginx..."
-systemctl reload nginx
+echo "==> Starting/enabling nginx..."
+systemctl enable --now nginx
+systemctl restart nginx
 
 echo "==> Obtaining SSL certificate via certbot..."
 certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos --redirect -m essadik18.39@gmail.com
 
-echo "==> Reloading nginx after SSL..."
-systemctl reload nginx
+echo "==> Restarting nginx after SSL..."
+systemctl restart nginx
 
 echo "Done! Your app is live at https://$DOMAIN"
