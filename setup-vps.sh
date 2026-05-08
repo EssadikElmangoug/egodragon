@@ -2,27 +2,27 @@
 set -e
 
 DOMAIN="egodragon.sedx3d.com"
-NGINX_CONF="/etc/nginx/sites-available/$DOMAIN"
+EMAIL="essadik18.39@gmail.com"
+DIR="$(cd "$(dirname "$0")" && pwd)"
 
-echo "==> Installing nginx and certbot..."
-apt-get update -y
-apt-get install -y nginx certbot python3-certbot-nginx
+echo "==> Starting app on HTTP (port 80)..."
+docker compose up -d --build
 
-echo "==> Copying nginx config..."
-cp "$(dirname "$0")/egodragon.nginx.conf" "$NGINX_CONF"
-ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/
+echo "==> Waiting for nginx to be ready..."
+sleep 3
 
-echo "==> Testing nginx config..."
-nginx -t
+echo "==> Running certbot to obtain SSL certificate..."
+docker compose run --rm certbot certonly --webroot \
+  --webroot-path=/var/www/certbot \
+  --email "$EMAIL" \
+  --agree-tos \
+  --no-eff-email \
+  -d "$DOMAIN"
 
-echo "==> Starting/enabling nginx..."
-systemctl enable --now nginx
-systemctl restart nginx
+echo "==> Switching nginx to SSL config..."
+cp "$DIR/nginx-ssl.conf" "$DIR/nginx.conf"
 
-echo "==> Obtaining SSL certificate via certbot..."
-certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos --redirect -m essadik18.39@gmail.com
-
-echo "==> Restarting nginx after SSL..."
-systemctl restart nginx
+echo "==> Restarting app with SSL..."
+docker compose restart app
 
 echo "Done! Your app is live at https://$DOMAIN"
