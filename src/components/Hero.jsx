@@ -71,7 +71,7 @@ export default function Hero() {
           </div>
           <div className="hero-divider" />
           <div className="hero-stat">
-            <span className="num">7+</span>
+            <span className="num">17+</span>
             <span className="label">Years of Practice</span>
           </div>
           <div className="hero-divider" />
