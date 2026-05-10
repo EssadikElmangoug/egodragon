@@ -50,8 +50,8 @@ export default function Navbar() {
             src="/logo.png"
             alt="Igo Dragon"
             className="logo-img"
-            width={140}
-            height={140}
+            width={320}
+            height={320}
             decoding="async"
           />
         </Link>

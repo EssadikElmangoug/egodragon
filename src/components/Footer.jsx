@@ -25,8 +25,8 @@ export default function Footer() {
                 src="/logo.png"
                 alt="Igo Dragon"
                 className="logo-img logo-img-footer"
-                width={160}
-                height={160}
+                width={320}
+                height={320}
                 decoding="async"
               />
             </Link>
