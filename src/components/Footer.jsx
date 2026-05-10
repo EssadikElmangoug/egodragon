@@ -60,7 +60,7 @@ export default function Footer() {
             <h4>Contact</h4>
             <div className="footer-contact-item">
               <i className="fas fa-map-marker-alt" />
-              <span>Ouarzazate, Morocco</span>
+              <span>Ave Ibn Sina, Ouarzazate 45000, Morocco</span>
             </div>
             <div className="footer-contact-item">
               <i className="fas fa-envelope" />

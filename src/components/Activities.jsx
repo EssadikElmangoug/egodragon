@@ -93,16 +93,6 @@ export default function Activities() {
             </div>
           ))}
         </div>
-
-        <div className="detox-banner">
-          <div className="detox-icons">
-            <span className="detox-icon-item"><i className="fas fa-phone" /></span>
-            <span className="detox-icon-item"><i className="fas fa-wifi" /></span>
-            <span className="detox-icon-item"><i className="fas fa-volume-up" /></span>
-          </div>
-          <h3>Total Digital Detox</h3>
-          <p>No phones. No internet. No noise. Only the sound of wind, water, and your own breathing.</p>
-        </div>
       </div>
     </section>
   )

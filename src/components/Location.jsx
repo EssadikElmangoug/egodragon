@@ -1,4 +1,10 @@
-import { demoLocationMap } from '../data/demoImages'
+/** Exact pin — Ave Ibn Sina area (Google Maps embed shows default marker here) */
+const PIN_LAT = 30.922710073263275
+const PIN_LNG = -6.919061752832745
+
+const MAP_EMBED_SRC = `https://maps.google.com/maps?q=${PIN_LAT},${PIN_LNG}&z=18&hl=en&output=embed`
+
+const MAP_OPEN_URL = `https://www.google.com/maps/search/?api=1&query=${PIN_LAT},${PIN_LNG}`
 
 const features = [
   { icon: 'fa-sun', title: '300+ Sunny Days/Year', desc: 'Crystal-clear skies for stargazing and outdoor practice' },
@@ -37,19 +43,21 @@ export default function Location() {
           </div>
 
           <div className="location-visual">
-            <div className="location-map">
-              <img
-                className="location-map-photo"
-                src={demoLocationMap}
-                alt="Saharan desert landscape near Ouarzazate"
+            <div className="location-map location-map-embed">
+              <iframe
+                title="Map — Ave Ibn Sina, Ouarzazate"
+                src={MAP_EMBED_SRC}
                 loading="lazy"
-                decoding="async"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
-              <div className="map-pin">
-                <div className="map-pin-icon">📍</div>
-                <div className="map-pin-label">Ouarzazate</div>
-                <div className="map-pin-coords">30°55′N · 6°54′W · 1160m alt.</div>
-              </div>
+            </div>
+            <div className="location-address-caption">
+              <p className="location-address-line">Ave Ibn Sina</p>
+              <p className="location-address-meta">Ouarzazate 45000 · Morocco</p>
+              <a className="location-map-link" href={MAP_OPEN_URL} target="_blank" rel="noopener noreferrer">
+                Open in Google Maps
+              </a>
             </div>
           </div>
         </div>

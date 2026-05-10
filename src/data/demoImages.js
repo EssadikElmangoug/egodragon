@@ -5,9 +5,6 @@
 export const demoAboutHero =
   'https://images.unsplash.com/photo-1542401886-65d6c61db217?auto=format&fit=crop&w=1400&q=85'
 
-export const demoLocationMap =
-  'https://images.unsplash.com/photo-1539650116574-75c0c6d74050?auto=format&fit=crop&w=1200&q=85'
-
 export const demoGallery = [
   {
     label: 'Dawn Kung Fu Training',
