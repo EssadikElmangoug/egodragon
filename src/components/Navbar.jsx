@@ -15,6 +15,15 @@ export default function Navbar() {
 
   useEffect(() => { setOpen(false) }, [location.pathname])
 
+  useEffect(() => {
+    if (!open) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [open])
+
   const scrollTo = (id) => {
     setOpen(false)
     if (location.pathname !== '/') {

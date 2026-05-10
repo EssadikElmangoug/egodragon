@@ -927,15 +927,32 @@ button, a, [role="radio"] { touch-action: manipulation; }
   .navbar.scrolled {
     background: rgba(8, 6, 4, 0.98);
   }
+  /* Open menu: drop backdrop-filter so `position:fixed` on .nav-links is viewport-relative
+     (otherwise blur creates a containing block ~nav height and the panel collapses). */
+  .navbar.menu-open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .hamburger { display: flex; }
   .nav-links {
     display: none;
-    position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: rgba(6,4,2,0.97); backdrop-filter: blur(20px);
-    flex-direction: column; padding: 16px 20px 32px; gap: 0;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    height: calc(100dvh - var(--nav-h));
+    max-height: calc(100svh - var(--nav-h));
+    background: rgba(6, 4, 2, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 16px 20px 32px;
+    gap: 0;
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
     overflow-y: auto;
+    z-index: 1002;
+    -webkit-overflow-scrolling: touch;
   }
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
