@@ -1,3 +1,5 @@
+import { demoLocationMap } from '../data/demoImages'
+
 const features = [
   { icon: 'fa-sun', title: '300+ Sunny Days/Year', desc: 'Crystal-clear skies for stargazing and outdoor practice' },
   { icon: 'fa-wind', title: 'Dry Desert Climate', desc: 'Naturally healing, low-humidity sub-Saharan air' },
@@ -36,6 +38,13 @@ export default function Location() {
 
           <div className="location-visual">
             <div className="location-map">
+              <img
+                className="location-map-photo"
+                src={demoLocationMap}
+                alt="Saharan desert landscape near Ouarzazate"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="map-pin">
                 <div className="map-pin-icon">📍</div>
                 <div className="map-pin-label">Ouarzazate</div>

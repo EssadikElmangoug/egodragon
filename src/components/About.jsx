@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { demoAboutHero } from '../data/demoImages'
 
 const values = [
   { icon: '⚔️', title: 'Discipline', desc: 'Through martial arts and structured daily practice' },
@@ -13,10 +14,13 @@ export default function About() {
         <div className="about-grid">
           <div className="about-visual">
             <div className="about-img-placeholder">
-              <div className="about-img-inner">
-                <div className="about-img-icon">🏔️</div>
-                <p>Ouarzazate · Morocco</p>
-              </div>
+              <img
+                className="about-photo"
+                src={demoAboutHero}
+                alt="Desert and Atlas foothills, Morocco"
+                loading="lazy"
+                decoding="async"
+              />
               <div className="about-img-overlay" />
             </div>
             <div className="about-badge-card">
