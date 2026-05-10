@@ -21,8 +21,14 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="logo">
-              <span className="logo-symbol">☯</span>
-              <span className="logo-text">IGO<strong>DRAGON</strong></span>
+              <img
+                src="/logo.png"
+                alt="Igo Dragon"
+                className="logo-img logo-img-footer"
+                width={160}
+                height={160}
+                decoding="async"
+              />
             </Link>
             <p>A sanctuary of transformation in the heart of Ouarzazate, Morocco.</p>
             <p className="footer-philosophy">"The greatest victory is over oneself"</p>

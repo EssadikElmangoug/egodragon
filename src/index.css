@@ -121,9 +121,22 @@ h1, h2, h3, h4 { font-family: var(--font-h); font-weight: 600; line-height: 1.2;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
 }
 .logo { display: flex; align-items: center; gap: 10px; }
-.logo-symbol { font-size: 1.75rem; color: var(--gold); line-height: 1; }
-.logo-text { font-family: var(--font-h); font-size: 1.05rem; letter-spacing: 0.18em; color: var(--text); }
-.logo-text strong { color: var(--gold); }
+.logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: min(160px, 42vw);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.navbar .logo-img {
+  height: 38px;
+  max-width: min(132px, 48vw);
+}
+.logo-img-footer {
+  height: 52px;
+  max-width: min(200px, 70vw);
+}
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links button {
   color: var(--text-m);

@@ -46,8 +46,14 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}${open ? ' menu-open' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="logo">
-          <span className="logo-symbol">☯</span>
-          <span className="logo-text">IGO<strong>DRAGON</strong></span>
+          <img
+            src="/logo.png"
+            alt="Igo Dragon"
+            className="logo-img"
+            width={140}
+            height={140}
+            decoding="async"
+          />
         </Link>
 
         <button
