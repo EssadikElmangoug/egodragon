@@ -65,6 +65,15 @@ export default function Navbar() {
             </li>
           ))}
           <li>
+            <Link
+              to="/blog"
+              className={location.pathname.startsWith('/blog') ? 'nav-route-active' : ''}
+              onClick={() => setOpen(false)}
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
             <Link to="/booking" className="nav-cta" onClick={() => setOpen(false)}>
               Book Now
             </Link>

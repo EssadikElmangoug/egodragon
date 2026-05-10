@@ -132,6 +132,18 @@ h1, h2, h3, h4 { font-family: var(--font-h); font-weight: 600; line-height: 1.2;
   transition: color var(--ease);
 }
 .nav-links button:hover { color: var(--text); }
+.nav-links a:not(.nav-cta) {
+  display: inline-block;
+  color: var(--text-m);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  transition: color var(--ease);
+}
+.nav-links a:not(.nav-cta):hover { color: var(--text); }
+.nav-route-active:not(.nav-cta) { color: var(--text); }
 .nav-cta {
   background: var(--primary); color: #fff !important;
   padding: 9px 22px; border-radius: 4px;
@@ -633,6 +645,124 @@ h1, h2, h3, h4 { font-family: var(--font-h); font-weight: 600; line-height: 1.2;
    BOOKING PAGE
 ═══════════════════════════════════════════ */
 .booking-page { padding-top: var(--nav-h); min-height: 100vh; }
+
+/* ═══════════════════════════════════════════
+   BLOG
+═══════════════════════════════════════════ */
+.blog-page { padding-top: var(--nav-h); min-height: 100vh; }
+.blog-hero .section-label { margin-bottom: 10px; }
+.blog-section { padding-top: 0; padding-bottom: 100px; }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.blog-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color var(--ease), transform var(--ease);
+}
+.blog-card:hover {
+  border-color: rgba(196, 96, 58, 0.28);
+  transform: translateY(-3px);
+}
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-d);
+}
+.blog-card-cat { color: var(--gold); }
+.blog-card h2 {
+  font-family: var(--font-h);
+  font-size: 1.28rem;
+  line-height: 1.35;
+  margin: 0;
+}
+.blog-card h2 a {
+  color: var(--text);
+  transition: color var(--ease);
+}
+.blog-card h2 a:hover { color: var(--primary-l); }
+.blog-card-excerpt {
+  color: var(--text-m);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  margin: 0;
+  flex: 1;
+}
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.blog-read-time { font-size: 0.78rem; color: var(--text-d); }
+.blog-read-more {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary-l);
+  transition: color var(--ease);
+}
+.blog-read-more:hover { color: var(--gold); }
+
+.blog-post-page .blog-post-hero { text-align: left; }
+.blog-post-header-inner { max-width: 720px; margin: 0 auto; }
+.blog-breadcrumb {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-m);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.blog-breadcrumb a {
+  color: var(--text-m);
+  transition: color var(--ease);
+}
+.blog-breadcrumb a:hover { color: var(--primary-l); }
+.blog-breadcrumb-current {
+  color: var(--text-d);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.blog-post-meta {
+  font-size: 0.88rem;
+  color: var(--text-m);
+  margin-top: 12px;
+}
+.blog-article-body { padding-bottom: 80px; max-width: 720px; margin: 0 auto; }
+.blog-prose {
+  padding-top: 8px;
+}
+.blog-prose p {
+  font-size: 1.05rem;
+  color: var(--text-m);
+  line-height: 1.85;
+  margin-bottom: 1.25em;
+}
+.blog-prose p:last-child { margin-bottom: 0; }
+.blog-back-wrap { margin-top: 48px; }
 .booking-hero {
   padding: 56px 0 36px; text-align: center;
   border-bottom: 1px solid var(--border);
@@ -956,12 +1086,14 @@ button, a, [role="radio"] { touch-action: manipulation; }
   }
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
-  .nav-links button {
+  .nav-links button,
+  .nav-links a:not(.nav-cta) {
     width: 100%; text-align: left; padding: 15px 14px;
     font-size: 0.9rem; border-radius: 8px;
     transition: background var(--ease), color var(--ease);
   }
-  .nav-links button:hover { background: rgba(196,96,58,0.08); color: var(--text); }
+  .nav-links button:hover,
+  .nav-links a:not(.nav-cta):hover { background: rgba(196,96,58,0.08); color: var(--text); }
   .nav-cta {
     margin-left: 0; margin-top: 12px;
     text-align: center; padding: 15px 22px; width: 100%; display: block;
